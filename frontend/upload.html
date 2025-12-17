@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Upload · FlowChat</title>
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="brand">FlowChat</div>
+    <nav class="nav">
+      <a href="/index.html" data-nav="home">Home</a>
+      <a href="/chat.html" data-nav="chat">AI Chat</a>
+      <a href="/videos.html" data-nav="videos">Videos</a>
+      <a href="/upload.html" data-nav="upload">Upload</a>
+    </nav>
+    <div class="user-chip">
+      <span id="userEmail">Loading...</span>
+      <button id="logoutBtn" class="ghost">Logout</button>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="panel">
+      <div class="panel-header">
+        <div>
+          <p class="eyebrow">Uploader</p>
+          <h2>Upload a video</h2>
+          <p class="muted">Drag a file here or pick one. After upload, we’ll save the metadata to your account.</p>
+        </div>
+        <a class="link" href="/videos.html">View library →</a>
+      </div>
+
+      <div class="form-grid">
+        <label class="field">
+          <span>Title</span>
+          <input id="title" type="text" placeholder="My demo reel" />
+        </label>
+        <label class="field">
+          <span>Description</span>
+          <textarea id="description" rows="3" placeholder="What should viewers know?"></textarea>
+        </label>
+      </div>
+
+      <div id="dropzone" class="dropzone">
+        <p class="eyebrow">Drag & drop</p>
+        <p>Drop your video here or <button type="button" id="fileTrigger" class="link-btn">browse</button></p>
+        <p class="muted">MP4, MOV, or WebM up to your ImageKit limit.</p>
+      </div>
+      <input id="fileInput" type="file" accept="video/*" hidden />
+
+      <div class="actions">
+        <button id="uploadBtn" class="button">Upload</button>
+        <div class="progress">
+          <div id="progressBar" class="progress-bar"></div>
+        </div>
+        <p id="status" class="form-note"></p>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="/src/upload.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Videos · FlowChat</title>
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="brand">FlowChat</div>
+    <nav class="nav">
+      <a href="/index.html" data-nav="home">Home</a>
+      <a href="/chat.html" data-nav="chat">AI Chat</a>
+      <a href="/videos.html" data-nav="videos">Videos</a>
+      <a href="/upload.html" data-nav="upload">Upload</a>
+    </nav>
+    <div class="user-chip">
+      <span id="userEmail">Loading...</span>
+      <button id="logoutBtn" class="ghost">Logout</button>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="panel">
+      <div class="panel-header">
+        <div>
+          <p class="eyebrow">Library</p>
+          <h2>Your uploaded videos</h2>
+          <p class="muted">We’ll show your latest uploads first.</p>
+        </div>
+        <a class="link" href="/upload.html">Add another →</a>
+      </div>
+
+      <p id="videosEmpty" class="empty-state">You didn’t upload any video yet.</p>
+      <div id="videos" class="videos-grid"></div>
+    </section>
+  </main>
+
+  <script type="module" src="/src/listVideos.js"></script>
+</body>
+
+</html>

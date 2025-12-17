@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home · FlowChat</title>
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="brand">FlowChat</div>
+    <nav class="nav">
+      <a href="/index.html" data-nav="home">Home</a>
+      <a href="/chat.html" data-nav="chat">AI Chat</a>
+      <a href="/videos.html" data-nav="videos">Videos</a>
+      <a href="/upload.html" data-nav="upload">Upload</a>
+    </nav>
+    <div class="user-chip">
+      <span id="userEmail">Loading...</span>
+      <button id="logoutBtn" class="ghost">Logout</button>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="hero">
+      <p class="eyebrow">Welcome back</p>
+      <h1>All your AI chats and video uploads in one place.</h1>
+      <p class="lede">Chat with an assistant, upload videos via ImageKit, and watch your saved clips—quickly switch between
+        workflows from here.</p>
+      <div class="cta-row">
+        <a class="button" href="/chat.html">Open AI chat</a>
+        <a class="button ghost" href="/upload.html">Upload a video</a>
+      </div>
+    </section>
+
+    <section class="cards-grid">
+      <article class="card">
+        <p class="eyebrow">Conversational AI</p>
+        <h3>Chat workspace</h3>
+        <p>Keep a sidebar of conversations like ChatGPT. Pick a thread or start fresh—the assistant remembers your last 20
+          messages.</p>
+        <a class="link" href="/chat.html">Go to chat →</a>
+      </article>
+
+      <article class="card">
+        <p class="eyebrow">Your library</p>
+        <h3>Watch uploads</h3>
+        <p>Browse every video you’ve uploaded. If you’re new here, we’ll let you know so you can start adding content.</p>
+        <a class="link" href="/videos.html">View videos →</a>
+      </article>
+
+      <article class="card">
+        <p class="eyebrow">Uploader</p>
+        <h3>Drag & drop</h3>
+        <p>Drop a file or choose from disk. We’ll push it to ImageKit, then store metadata in MongoDB automatically.</p>
+        <a class="link" href="/upload.html">Upload now →</a>
+      </article>
+    </section>
+  </main>
+
+  <script type="module" src="/src/home.js"></script>
+</body>
+
+</html>

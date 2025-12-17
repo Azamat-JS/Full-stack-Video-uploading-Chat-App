@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign up · FlowChat</title>
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+
+<body class="auth-body">
+  <main class="auth-shell">
+    <section class="auth-card">
+      <div>
+        <p class="eyebrow">FlowChat</p>
+        <h1>Create your account</h1>
+        <p class="lede">Start chatting with AI and upload your first video in seconds.</p>
+      </div>
+
+      <form id="authForm" class="stack">
+        <label class="field">
+          <span>Email</span>
+          <input name="email" type="email" placeholder="you@example.com" required />
+        </label>
+        <label class="field">
+          <span>Password</span>
+          <input name="password" type="password" placeholder="At least 6 characters" required minlength="6" />
+        </label>
+        <button type="submit" class="button">Create account</button>
+        <p class="muted">Already have an account? <a href="/login.html">Login</a></p>
+        <p id="authMessage" class="form-note"></p>
+      </form>
+    </section>
+  </main>
+
+  <script type="module" src="/src/signup.js"></script>
+</body>
+
+</html>

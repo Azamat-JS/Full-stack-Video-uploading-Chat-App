@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Chat · FlowChat</title>
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="brand">FlowChat</div>
+    <nav class="nav">
+      <a href="/index.html" data-nav="home">Home</a>
+      <a href="/chat.html" data-nav="chat">AI Chat</a>
+      <a href="/videos.html" data-nav="videos">Videos</a>
+      <a href="/upload.html" data-nav="upload">Upload</a>
+    </nav>
+    <div class="user-chip">
+      <span id="userEmail">Loading...</span>
+      <button id="logoutBtn" class="ghost">Logout</button>
+    </div>
+  </header>
+
+  <main class="shell chat-layout">
+    <aside class="chat-sidebar">
+      <div class="sidebar-header">
+        <p class="eyebrow">Conversations</p>
+        <button id="newChatBtn" class="button ghost small">+ New chat</button>
+      </div>
+      <div class="sidebar-divider"></div>
+      <div id="sessions" class="sessions"></div>
+    </aside>
+
+    <section class="chat-panel">
+      <div id="messages" class="chat-messages"></div>
+      <div id="chatEmptyState" class="empty-state">
+        <p class="eyebrow">Start a conversation</p>
+      </div>
+      <form id="chatForm" class="chat-input">
+        <input id="chatInput" type="text" placeholder="Ask anything..." autocomplete="off" />
+        <button type="submit" class="button">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <script type="module" src="/src/chatPage.js"></script>
+</body>
+
+</html>
