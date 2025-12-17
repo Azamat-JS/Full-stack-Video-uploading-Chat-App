@@ -18,6 +18,11 @@ app.use("/api/imagekit", imageKitRoutes);
 app.use("/api/videos", videoRoutes);
 app.use("/api/chat", chatRoutes);
 
+app.get("/", (req, res) => {
+    res.send("AI chat + Video Uploading app!");
+});
+
+
 mongoose.connect(process.env.MONGO_URI)
     .then(() => {
         console.log("MongoDB connected");
