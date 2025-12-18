@@ -3,7 +3,7 @@ import express from "express";
 
 import { connectDB } from "./src/lib/db.js";
 
-import imageKitRoutes from "./src/routes/imagekit.js";
+import imageKitRoutes from "./src/routes/imageKit.js";
 import videoRoutes from "./src/routes/videos.js";
 import chatRoutes from "./src/routes/chat.js";
 import authRoutes from "./src/routes/auth.js";
