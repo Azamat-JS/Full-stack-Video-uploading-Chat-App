@@ -12,8 +12,14 @@ const app = express();
 
 app.use((req, res, next) => {
     res.setHeader("Access-Control-Allow-Origin", "*");
-    res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
-    res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+    res.setHeader(
+        "Access-Control-Allow-Methods",
+        "GET, POST, PUT, DELETE, OPTIONS"
+    );
+    res.setHeader(
+        "Access-Control-Allow-Headers",
+        "Content-Type, Authorization"
+    );
 
     if (req.method === "OPTIONS") {
         return res.status(200).end();
@@ -21,22 +27,24 @@ app.use((req, res, next) => {
 
     next();
 });
+
 app.use(express.json());
 
-app.get("/api/health", async (req, res) => {
+app.use("/api", async (req, res, next) => {
     try {
         await connectDB();
-        res.status(200).json({
-            status: "ok",
-            db: "connected",
-            timestamp: new Date().toISOString(),
-        });
+        next();
     } catch (err) {
-        res.status(500).json({
-            status: "error",
-            db: "disconnected",
-        });
+        console.error("DB connection failed:", err);
+        res.status(500).json({ message: "Database unavailable" });
     }
+});
+
+app.get("/api/health", (req, res) => {
+    res.status(200).json({
+        status: "ok",
+        timestamp: new Date().toISOString(),
+    });
 });
 
 app.use("/api/auth", authRoutes);
