@@ -10,18 +10,10 @@ import authRoutes from "./src/routes/auth.js";
 
 const app = express();
 
-await connectDB();
-
 app.use((req, res, next) => {
     res.setHeader("Access-Control-Allow-Origin", "*");
-    res.setHeader(
-        "Access-Control-Allow-Methods",
-        "GET, POST, PUT, DELETE, OPTIONS"
-    );
-    res.setHeader(
-        "Access-Control-Allow-Headers",
-        "Content-Type, Authorization"
-    );
+    res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
 
     if (req.method === "OPTIONS") {
         return res.status(200).end();
@@ -29,7 +21,6 @@ app.use((req, res, next) => {
 
     next();
 });
-
 app.use(express.json());
 
 app.get("/api/health", async (req, res) => {
@@ -48,13 +39,11 @@ app.get("/api/health", async (req, res) => {
     }
 });
 
-// Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/imagekit", imageKitRoutes);
 app.use("/api/videos", videoRoutes);
 app.use("/api/chat", chatRoutes);
 
-// Root route is optional (can keep)
 app.get("/", (req, res) => {
     res.send("AI chat + Video Uploading app!");
 });
